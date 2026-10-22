@@ -22,4 +22,19 @@ class ValidadorBoletoTest {
     void deveRejeitarEntradaMenorQue47Caracteres() {
         assertFalse(validador.validar("00190.00009 01234.567890 12345.678909 1 0000000001000"));
     }
+
+    @Test
+    void deveRejeitarEntradaVazia() {
+        assertFalse(validador.validar(""));
+    }
+
+    @Test
+    void deveRejeitarEntradaSomenteComEspacos() {
+        assertFalse(validador.validar("     "));
+    }
+
+    @Test
+    void deveRejeitarEntradaCom48Digitos() {
+        assertFalse(validador.validar("001900000900123456782901234567831100000000100000"));
+    }
 }
