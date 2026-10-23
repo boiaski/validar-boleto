@@ -12,12 +12,12 @@ class ValidadorBoletoTest {
     }
 
     @Test
-    void deveValidarEntradaValida() {
+    void deveAceitarLinhaFormatadaComPontosEEspacos() {
         assertTrue(ValidadorBoleto.validar("00190.00009 01234.567890 12345.678909 1 00000000010000"));
     }
 
     @Test
-    void deveRejeitarEntradaMenorQue47Caracteres() {
+    void deveRejeitarLinhaCom46Digitos() {
         assertFalse(ValidadorBoleto.validar("00190.00009 01234.567890 12345.678909 1 0000000001000"));
     }
 
