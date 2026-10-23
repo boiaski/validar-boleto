@@ -35,4 +35,9 @@ class ValidadorBoletoTest {
     void deveRejeitarEntradaCom48Digitos() {
         assertFalse(ValidadorBoleto.validar("001900000900123456782901234567831100000000100000"));
     }
+
+    @Test
+    void deveRejeitarLinhaComLetra() {
+        assertFalse(ValidadorBoleto.validar("00190.00009 01234.567890 12345.678909 1 00000000010000a"));
+    }
 }
